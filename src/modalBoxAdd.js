@@ -7,8 +7,8 @@ function exibeModalAdicionar(){
           <div class="w-4xl h-4xl bg-gray-100 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-md dark:bg-gray-800">
             <h1 class="text-left text-2xl py-2 mx-10 mt-5 font-medium">Nova Tarefa</h1>
           <form action="" class="flex flex-col mx-10 mb-5 mt-5">
-              <label for="nomeTarefa" class="text-lg">Nome da tarefa</label>
-              <input type="text" name="nomeTarefa" id="nomeTarefa" required class="border-black border-1 rounded-md p-3 mt-3 dark:border-white" placeholder="Digite o nome aqui">
+              <label for="nomeTarefa" class="text-lg" required>Nome da tarefa</label>
+              <input type="text" name="nomeTarefa" id="nomeTarefa" class="border-black border-1 rounded-md p-3 mt-3 dark:border-white" placeholder="Digite o nome aqui">
               
               <label for="descricaoTarefa" class="text-lg mt-5">Descição da tarefa</label>
               <textarea name="descricaoTarefa" id="descricaoTarefa" class="border-black border-1 rounded-md p-2 mt-3 h-30 dark:border-white" placeholder="Digite a descrição da tarefa"></textarea>
@@ -59,5 +59,6 @@ function salvaModalAdicionar(){
   escrita(objTarefa);
   divModalAdicionar.innerHTML = ""
 }
+
 
 export { exibeModalAdicionar }
