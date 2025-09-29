@@ -20,11 +20,13 @@ function populaObjetoTabela(objeto){
     let status = "Pendente"
     let disabledSts = "";
     let disabledStsBtn = "";
-    let disabledStsBtnClr = "";
+    let btnConcluir = "bg-green-600";
+    let btnApagar = "bg-red-600";
     if(Boolean(objeto.status)){
         disabledSts = "text-gray-500"
         disabledStsBtn = "disabled"
-        disabledStsBtnClr = "/50"
+        btnConcluir = "bg-green-600/50"
+        btnApagar = "bg-red-600/50"
         status = "Concluído"
     }
     lista.innerHTML += `<tr class="border-b-1 border-b-black dark:border-b-white ${disabledSts}">
@@ -33,8 +35,8 @@ function populaObjetoTabela(objeto){
                             <td class="px-10 py-10 break-words text-xs">${objeto.descricao}</td>
                             <td class="px-10 py-5 text-md">${objeto.dataHora}</td>
                             <td class="px-10 py-5 text-md">${status}</td>
-                            <td class="px-6 py-5 text-md"><button class="bg-green-600${disabledStsBtnClr} text-white px-5 py-2 rounded-md concluirBtn" ${disabledStsBtn}> <i class="ph ph-check-circle"></i> Concluir</button></td>
-                            <td class="px-6 py-5 text-md"><button class="bg-red-600${disabledStsBtnClr} text-white px-5 py-2 rounded-md apagarBtn" ${disabledStsBtn}><i class="ph ph-trash"></i>Apagar</button></td>
+                            <td class="px-6 py-5 text-md"><button class="${btnConcluir} text-white px-5 py-2 rounded-md concluirBtn" ${disabledStsBtn}> <i class="ph ph-check-circle"></i> Concluir</button></td>
+                            <td class="px-6 py-5 text-md"><button class="${btnApagar} text-white px-5 py-2 rounded-md apagarBtn" ${disabledStsBtn}><i class="ph ph-trash"></i>Apagar</button></td>
                         </tr>`
     modalApagarFunc();
     modalConcluirFunc();
@@ -64,5 +66,6 @@ function filtraTabela(filtro){
         }
     }
 }
+
 
 export { populaTabela,filtraTabela,populaObjetoTabela }
