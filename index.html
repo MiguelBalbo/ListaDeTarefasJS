@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+    <title>Lista de Tarefas</title>
+  </head>
+  <body class="p-10 bg-gray-50 dark:bg-gray-900 dark:text-gray-50">
+    <header class="flex flex-row justify-around items-center">
+      <div class="flex gap-5 w-1/1">
+        <img src="./src/favicon.svg" alt="Icone de lista de tarefas" class="w-[4.5vw]">
+        <h1 class="text-[4.5vw] w-full">Lista de Tarefas</h1>
+      </div>
+      <div class="flex gap-5">
+        <h2 class="text-2xl mt-3" id="relogio">hh:mm:ss</h2>
+      </div>
+    </header>
+
+    <main>
+      <div class="mx-auto my-5 text-center">
+        <button id="modalAddBtn" class="dark:bg-blue-900 bg-blue-600 rounded-md py-5 w-full text-white">
+          <i class="ph ph-plus-circle"></i>
+          Adicionar Tarefa
+        </button>
+      </div>
+
+      <div id="modalAdd"></div>
+      <div id="modalApaga"></div>
+      <div id="modalConcluir"></div>
+      
+      <div class="flex gap-2 mb-5">
+        <p class="pt-2 pr-2 text-sm">Filtro por Status:</p>
+        <button class="p-[.5vw] border-black border-1 rounded-4xl botaoFiltro dark:border-white bg-black text-white dark:bg-white dark:text-black">Todos</button>
+        <button class="p-[.5vw] border-black border-1 rounded-4xl botaoFiltro dark:border-white">Pendente</button>
+        <button class="p-[.5vw] border-black border-1 rounded-4xl botaoFiltro dark:border-white">Concluído</button>
+      </div>
+
+      <div class="text-center">
+        <table class="mx-auto w-max overflow-auto" id="tabela">
+        </table>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
